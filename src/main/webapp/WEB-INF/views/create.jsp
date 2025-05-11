@@ -3,7 +3,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>에이룸 - AI 화상회의</title>
+    <title>회의방 생성 - 에이룸</title>
     <style>
         body {
             margin: 0;
@@ -25,18 +25,22 @@
         .main-container {
             display: flex;
             justify-content: center;
-            padding: 60px 40px;
+            padding: 100px 20px;
+            text-align: center;
         }
 
-        .left-box {
-            flex: 1;
+        .form-box {
             max-width: 500px;
-            text-align: center;
-            padding: 40px;
-            background-color: white;
+            width: 100%;
+            background: white;
+            padding: 60px 30px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            margin-right: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 40px;
         }
 
         .input-field {
@@ -45,15 +49,13 @@
             border: 2px solid #2c3e50;
             border-radius: 30px;
             font-size: 16px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .btn {
-            display: block;
             width: 80%;
-            padding: 10px;
-            margin: 10px auto;
-            font-size: 15px;
+            padding: 12px;
+            font-size: 16px;
             border: none;
             border-radius: 5px;
             background-color: #3498db;
@@ -61,16 +63,13 @@
             cursor: pointer;
         }
 
-        .btn-red {
-            background-color: #e74c3c;
-        }
-
         .btn:hover {
             background-color: #2980b9;
         }
 
-        .btn-red:hover {
-            background-color: #c0392b;
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
         /* 모달 */
@@ -120,19 +119,20 @@
 </head>
 <body>
 
-<!-- 상단 바 -->
+<!-- 상단바 -->
 <div class="top-bar">
-    <div><a href="/" style="color: black; text-decoration: none;">에이룸</a></div>
-    <div><a href="#" id="openModalBtn" style="color: black; text-decoration: none;">회의록 다운로드</a></div>
+    <div><a href="/">에이룸</a></div>
+    <div><a href="#" id="openModalBtn">회의록 다운로드</a></div>
 </div>
 
-<!-- 본문 영역 -->
+<!-- 본문 -->
 <div class="main-container">
-    <!-- 왼쪽: 회의 참여/생성 -->
-    <div class="left-box">
-        <input type="text" class="input-field" placeholder="6자리의 번호를 입력해 주세요." />
-        <a class="btn">회의 참여하기</a>
-        <a class="btn btn-red" href="create" style="text-decoration: none;">회의방 생성하기</a>
+    <div class="form-box">
+        <h2>회의방 생성하기</h2>
+        <form action="/createRoom" method="post">
+            <input type="text" name="roomName" class="input-field" placeholder="회의방 명을 입력해 주세요." required />
+            <button type="submit" class="btn">생성하기</button>
+        </form>
     </div>
 </div>
 
@@ -175,6 +175,5 @@
         }
     }
 </script>
-
 </body>
 </html>
