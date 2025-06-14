@@ -1,0 +1,7 @@
+
+CREATE TABLE IF NOT EXISTS MEETING_ROOM (
+                                            ROOM_ID BIGINT AUTO_INCREMENT PRIMARY KEY,
+                                            ROOM_CODE VARCHAR(6),
+    ROOM_NAME VARCHAR(100),
+    CREATED_AT TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );

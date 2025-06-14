@@ -14,7 +14,7 @@ const CreatePage = () => {
                 { name: roomName },
                 {
                     headers: {
-                        'Content-Type': 'application/json'  // ✅ 이 한 줄이 핵심
+                        'Content-Type': 'application/json'
                     }
                 }
             );
