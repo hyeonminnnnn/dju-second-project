@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>에이룸 - 회의 진행 중</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="top-bar">
+  <div><a href="/" class="logo">에이룸</a></div>
+  <div id="room-header">회의방 코드: <span id="room-code-display"></span></div>
+</div>
+
+<div class="video-container">
+  <div>
+    <h2>나 (Local)</h2>
+    <video id="localVideo" autoplay playsinline></video>
+  </div>
+  <div>
+    <h2>상대방 (Remote)</h2>
+    <video id="remoteVideo" autoplay playsinline></video>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/room.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.top-bar {
+    background-color: white;
+    padding: 15px 30px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.logo {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.center-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 40px;
+    text-align: center;
+}
+
+.action-section {
+    width: 300px;
+}
+
+.divider {
+    border-left: 1px solid #ddd;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+#room-header {
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+#room-code-display {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+video {
+    width: 500px;
+    max-width: 45vw;
+    background-color: black;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* --- 반응형 디자인을 위한 미디어 쿼리 --- */
+/* 화면 너비가 768px 이하일 때 아래 스타일을 적용합니다. */
+@media (max-width: 768px) {
+
+    /* --- 상단 바 --- */
+    .top-bar {
+        flex-direction: column; /* 요소들을 세로로 쌓음 */
+        gap: 10px;
+        padding: 15px;
+    }
+
+    /* --- 메인/로비 페이지 --- */
+    .center-box {
+        flex-direction: column; /* 가로 정렬을 세로 정렬로 변경 */
+        width: 85%;
+        padding: 20px;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    .divider {
+        display: none; /* 세로 정렬에서는 구분선 숨기기 */
+    }
+
+    .action-section {
+        width: 100%; /* 너비를 꽉 채움 */
+    }
+
+    .action-section h2 {
+        margin-top: 0;
+    }
+
+    /* --- 화상 채팅 페이지 --- */
+    .video-container {
+        flex-direction: column; /* 비디오를 세로로 쌓음 */
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    video {
+        width: 90vw; /* 화면 너비의 90%를 차지하도록 조정 */
+        max-width: none; /* 기존의 max-width 제한 해제 */
+    }
+}
